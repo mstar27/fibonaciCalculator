@@ -22,24 +22,37 @@ varB = 0
 #introduction to what the code does
 print ("this program will out put various numbers in the fibonacci sequence based on the number of iters the user desires")
 
-#prompt to get user input for iters(converted to integer)
-userIn_Iters = int(input("how many iters do you want?"))
-print("calculating for", userIn, "iters")
 
 #make this a function that also checks if valid input. if invalid will give error message and repeat. if good will set variable
 def func_UserIn_ShowIter():
-	userIn_ShowIter = input.lower("If you would like to see all iterations calculated type, 'y' or 'yes'. If not, type 'n' or 'N' ")
+	userIn_ShowIter = input("If you would like to see all iterations calculated type, 'y' or 'yes'. If not, type 'n' or 'N' ")
+	userIn_ShowIter = userIn_ShowIter.lower()
 
-	if userIn_ShowIter is 1:
-		b_ShowIter = 1
+	if userIn_ShowIter in ["y", "yes"]:
 		print("Showing all iterations calculated")
+		return 1
 
-	elif userIn_ShowIter is 0:
-		b_ShowIter = 0
+	elif userIn_ShowIter in ["n", "no"]:
 		print("Only showing the final iteration calculated")
+		return 0
 
-func_UserIn_ShowIter
+	else:
+		print("Invalid input. Please try again")
+		func_UserIn_ShowIter()
+
+b_ShowIter = func_UserIn_ShowIter()
+
+#prompt to get user input for iters(converted to integer)
+userIn_Iters = int(input("how many iters do you want?"))
+print("calculating for", userIn_Iters, "iters")
+
 """user interface ends here"""
+
+
+"""the code for whether or not the iterations will be shown based on user input"""
+
+
+"""The """
 
 
 """main body of the code begins here"""
